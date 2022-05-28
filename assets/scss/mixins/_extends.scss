@@ -1,1 +1,9 @@
-@use "../presets" as *;
+// @use "../presets" as *;
+@import "../presets";
+
+%container {
+  min-width: $ul;
+  padding-left: $gap;
+  padding-right: $gap;
+  margin: 0 auto;
+}

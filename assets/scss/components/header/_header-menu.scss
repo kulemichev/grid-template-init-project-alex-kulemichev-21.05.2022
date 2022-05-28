@@ -1,0 +1,11 @@
+// @use "../../presets" as *;
+// @use "../../mixins" as *;
+
+@import "../../presets";
+@import "../../mixins";
+
+.header-menu {
+  &__container {
+    @extend %container;
+  }
+}

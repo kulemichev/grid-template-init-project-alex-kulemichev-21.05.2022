@@ -1,0 +1,13 @@
+// @use "../../presets" as *;
+// @use "../../mixins" as *;
+
+@import "../../presets";
+@import "../../mixins";
+
+.header-overlay {
+  // width: 1920px;
+  // height: 1080px;
+  background-color: $color-primary;
+  opacity: 0.8;
+  @include abs-position;
+}

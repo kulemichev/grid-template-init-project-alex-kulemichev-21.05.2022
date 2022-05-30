@@ -11,6 +11,7 @@ html {
   color: $color-gray;
   font-family: $font-main;
   font-size: $font-size;
+  overflow-y: scroll;
 }
 a {
   text-decoration: none;
@@ -18,7 +19,8 @@ a {
 }
 h1 {
   font-size: 3.75rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   font-weight: 300;
   font-family: $font-header;
+  line-height: 1.2rem;
 }

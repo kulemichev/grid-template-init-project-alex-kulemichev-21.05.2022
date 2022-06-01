@@ -1,4 +1,6 @@
-@use "../presets" as *;
+// @use "../presets" as *;
+
+@import "../presets";
 
 /* ul */
 @mixin ul-min {

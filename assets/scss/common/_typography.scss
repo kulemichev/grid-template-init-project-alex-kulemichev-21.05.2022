@@ -1,8 +1,5 @@
-// @use "../presets";
-// @use ; "../mixins";
-
-@import "../presets";
-@import "../mixins";
+@use "../presets" as *;
+@use "../mixins" as *;
 
 *,
 *::before,

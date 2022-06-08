@@ -1,8 +1,5 @@
-// @use "../../presets" as *;
-// @use "../../mixins" as *;
-
-@import "../../presets";
-@import "../../mixins";
+@use "../../presets" as *;
+@use "../../mixins" as *;
 
 .header-menu {
   position: absolute;
@@ -13,6 +10,7 @@
 
   &__container {
     @extend %container;
+
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;

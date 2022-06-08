@@ -1,6 +1,4 @@
-// @use "../presets" as *;
-
-@import "../presets";
+@use "../presets" as *;
 
 @mixin text-shortener {
   display: block;

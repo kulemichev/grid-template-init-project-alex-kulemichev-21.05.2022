@@ -1,8 +1,5 @@
-// @use "../../presets" as *;
-// @use "../../mixins" as *;
-
-@import "../../presets";
-@import "../../mixins";
+@use "../../presets" as *;
+@use "../../mixins" as *;
 
 .header-navbar {
   letter-spacing: 0.1em;
@@ -10,15 +7,19 @@
   &__btn {
     display: none;
   }
+
   &__list {
     display: grid;
     justify-content: end;
-    gap: $gap;
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    @include unlist(0 (-$gap-sm) 0 0);
+
+    @include unlist(0 (-$gap) 0 0);
   }
+
   &__item {
+    margin: $gap $gap-sm;
   }
+
   &__link {
     display: block;
     padding: $gap $gap-sm;

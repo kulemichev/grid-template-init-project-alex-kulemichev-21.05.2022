@@ -7,16 +7,19 @@
   box-sizing: border-box;
 }
 html {
+  overflow-y: scroll;
+
   color: $color-gray;
+
   font-family: $font-main;
   font-size: $font-size;
-  overflow-y: scroll;
 }
 
 h1 {
   letter-spacing: 0.08em;
-  font-weight: 300;
+
   font-family: $font-header;
+  font-weight: 300;
   line-height: 1.2rem;
 
   @include lg-min {
@@ -32,5 +35,6 @@ h1 {
 
 a {
   text-decoration: none;
+
   color: $color-light;
 }

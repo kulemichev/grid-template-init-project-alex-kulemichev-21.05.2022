@@ -1,0 +1,29 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+// часть из урока 11 (воре
+// .dev {
+//   background-color: $color-primary;
+//   padding: $gap;
+//   display: flex;
+//   gap: $gap;
+// }
+
+// .dev input {
+//   background-color: rgba($color-light, 0.05);
+//   padding: $gap;
+//   border: 2px solid rgba($color-light, 0);
+//   border-bottom: 2px solid rgba($color-light, 0.1);
+//   outline: none;
+//   font-size: 1.125rem;
+//   letter-spacing: 0.1em;
+//   color: $color-light;
+//   transition: 0.5s;
+//   flex-grow: 1;
+// }
+
+// .dev input:focus {
+//   border-color: rgba($color-light, 0.1);
+//   border-bottom-color: $color-light;
+//   background-color:  rgba($color-light, 0.15);
+// }

@@ -2,7 +2,6 @@
 @use "../../mixins" as *;
 
 .about {
-  background-color: red;
   letter-spacing: 0.055em;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -19,7 +18,6 @@
 }
 
 .about__container {
-  background-color: red;
   display: grid;
   grid-template-columns: 1fr 271px;
   max-width: 1340px;
@@ -82,30 +80,3 @@
     }
   }
 }
-
-// // часть из урока 11
-// .form {
-//   background-color: $color-primary;
-//   padding: $gap;
-//   display: flex;
-//   gap: $gap;
-// }
-
-// .form-item__input {
-//   background-color: rgba($color-light, 0.05);
-//   padding: $gap;
-//   border: 2px solid rgba($color-light, 0);
-//   border-bottom: 2px solid rgba($color-light, 0.1);
-//   outline: none;
-//   font-size: 1.125rem;
-//   letter-spacing: 0.1em;
-//   color: $color-light;
-//   transition: 0.5s;
-//   flex-grow: 1;
-// }
-
-// .form-item__input:focus {
-//   border-color: rgba($color-light, 0.1);
-//   border-bottom-color: $color-light;
-//   background-color: rgba($color-light, 0.15);
-// }

@@ -2,137 +2,124 @@
 @use "../../mixins" as *;
 
 .header-navbar {
+  display: grid;
+  align-items: center;
+
   letter-spacing: 0.1em;
 
-  &__btn {
-    width: 30px;
-    height: 22.5px;
-    position: relative;
-    margin: $gap 0 $gap 0;
-    transform: rotate(0);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
+  justify-items: end;
+}
+.header-navbar__link {
+  display: block;
 
-    @include md-min {
-      display: none;
-    }
+  transition: color 0.5s;
 
-    &-row {
-      position: absolute;
-      display: block;
-      width: 50%;
-      height: 3px;
-      transform: rotate(0);
-      transition: 0.25s ease-in-out;
-      opacity: 1;
-      background: $color-light;
-    }
+  font-size: 1.125rem;
+}
+.header-navbar__link:hover,
+.header-navbar__link:focus {
+  color: #d66926;
+}
+.header-navbar__btn {
+  position: relative;
 
-    &:nth-child(even) {
-      left: 50%;
+  width: 30px;
+  height: 23px;
+  margin: 20px 0;
 
-      border-radius: 0 3px 3px 0;
-    }
+  cursor: pointer;
 
-    &:nth-child(odd) {
-      left: 0;
+  transform: rotate(0deg);
+}
+.header-navbar__btn-row {
+  position: absolute;
+  left: 0;
 
-      border-radius: 3px 0 0 3px;
-    }
+  display: block;
 
-    &:nth-child(1),
-    &:nth-child(2) {
-      top: 0;
-    }
+  width: 100%;
+  height: 3px;
 
-    &:nth-child(3),
-    &:nth-child(4) {
-      top: 9px;
-    }
+  transition: 0.25s ease-in-out;
 
-    &:nth-child(5),
-    &:nth-child(6) {
-      top: 18px;
-    }
+  transform: rotate(0deg);
 
-    &--active span {
-      &:nth-child(1),
-      &:nth-child(6) {
-        transform: rotate(45deg);
-      }
+  opacity: 1;
+  border-radius: 3px;
+  background: #ffffff;
+}
+.header-navbar__btn-row:nth-of-type(1) {
+  top: 0;
+}
+.header-navbar__btn-row:nth-of-type(2) {
+  top: 9px;
+}
+.header-navbar__btn-row:nth-of-type(3) {
+  top: 18px;
+}
+.header-navbar__btn--active span:nth-of-type(1) {
+  top: 9px;
 
-      &:nth-child(2),
-      &:nth-child(5) {
-        transform: rotate(-45deg);
-      }
+  transform: rotate(135deg);
+}
+.header-navbar__btn--active span:nth-of-type(2) {
+  left: -30px;
 
-      &:nth-child(1) {
-        top: 3.5px;
-        left: 2.5px;
-      }
+  opacity: 0;
+}
+.header-navbar__btn--active span:nth-of-type(3) {
+  top: 9px;
 
-      &:nth-child(2) {
-        top: 3.5px;
-        left: calc(50% - 2.5px);
-      }
+  transform: rotate(-135deg);
+}
 
-      &:nth-child(3) {
-        left: -50%;
+@media (min-width: 768px) {
+  .header-navbar__list {
+    display: grid;
 
-        opacity: 0;
-      }
+    justify-content: end;
 
-      &:nth-child(4) {
-        left: 100%;
+    width: 100%;
+    margin: 0 -10px 0 0;
+    padding: 0;
 
-        opacity: 0;
-      }
+    list-style: none;
 
-      &:nth-child(5) {
-        top: 14.5px;
-        left: 2.5px;
-      }
-
-      &:nth-child(6) {
-        top: 14.5px;
-        left: calc(50% - 2.5px);
-      }
-    }
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
   }
-
-  &__list {
-    @include md-min {
-      display: grid;
-      justify-content: end;
-
-      gap: $gap;
-      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-      @include unlist;
-    }
-    @include md {
-      display: none;
-    }
-    @include unlist(0 (-$gap-sm) 0 0);
-
-    &.active {
-      display: flex;
-    }
+  .header-navbar__link {
+    padding: 20px 10px;
   }
+  .header-navbar__btn {
+    display: none;
+  }
+}
 
-  // &__item {
-  // }
-  &__link {
-    display: block;
+@media (max-width: 767.8px) {
+  .header-navbar__list {
+    position: absolute;
+    top: 100%;
+    right: 20px;
 
-    padding: $gap $gap-sm;
+    display: none;
 
-    transition: color 0.5s;
+    margin: 0;
+    padding: 0;
 
-    font-size: 1.125rem;
+    list-style: none;
 
-    &:hover,
-    &:focus {
-      color: $color-accent;
-    }
+    text-align: right;
+
+    background-color: rgba(68, 89, 110, 0.9);
+
+    box-shadow: -3px 3px 20px -10px black;
+  }
+  .header-navbar__item {
+    margin: 20px 10px;
+  }
+  .header-navbar__link {
+    padding: 10px 20px;
   }
 }

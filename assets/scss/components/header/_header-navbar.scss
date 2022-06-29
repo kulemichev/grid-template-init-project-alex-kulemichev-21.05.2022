@@ -5,24 +5,134 @@
   letter-spacing: 0.1em;
 
   &__btn {
-    display: none;
+    width: 30px;
+    height: 22.5px;
+    position: relative;
+    margin: $gap 0 $gap 0;
+
+    transform: rotate(0);
+
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    @include md-min {
+      display: none;
+    }
+
+    &-row {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 50%;
+      background: $color-light;
+      opacity: 1;
+
+      transform: rotate(0deg);
+
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(even) {
+        left: 50%;
+        border-radius: 0 3px 3px 0;
+      }
+      &:nth-child(odd) {
+        left: 0px;
+        border-radius: 3px 0 0 3px;
+      }
+      &:nth-child(1),
+      &:nth-child(2) {
+        top: 0px;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        top: 9px;
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        top: 18px;
+      }
+    }
+    &--active span {
+      &:nth-child(1),
+      &:nth-child(6) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2),
+      &:nth-child(5) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(1) {
+        left: 2.5px;
+        top: 3.5px;
+      }
+
+      &:nth-child(2) {
+        left: calc(50% - 2.5px);
+        top: 3.5px;
+      }
+
+      &:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+      }
+
+      &:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+      }
+
+      &:nth-child(5) {
+        left: 2.5px;
+        top: 14.5px;
+      }
+
+      &:nth-child(6) {
+        left: calc(50% - 2.5px);
+        top: 14.5px;
+      }
+    }
   }
 
   &__list {
-    display: flex;
-    justify-content: end;
-    gap: $gap;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    @include md-min {
+      display: grid;
+      justify-content: end;
+      gap: $gap;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      @include unlist(0 (-$gap-sm) 0 0);
+    }
 
-    @include unlist(0 (-$gap-sm) 0 0);
+    @include md {
+      @include unlist;
+      @include box-shadow;
+
+      position: absolute;
+      background-color: rgba($color-gray-dark, 0.9);
+      display: none;
+      top: 100%;
+      right: $gap;
+      text-align: right;
+    }
   }
 
   &__item {
+    @include md {
+      margin: $gap $gap-sm;
+    }
   }
 
   &__link {
     display: block;
-    padding: $gap $gap-sm;
+    @include md-min {
+      padding: $gap $gap-sm;
+    }
+    @include md {
+      padding: $gap-sm $gap;
+    }
     transition: color 0.5s;
     font-size: 1.125rem;
 
@@ -31,94 +141,4 @@
       color: $color-accent;
     }
   }
-}
-
-.header-navbar__btn {
-  width: 30px;
-  height: 22.5px;
-  position: relative;
-  margin: 50px auto;
-
-  transform: rotate(0deg);
-
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-}
-
-.header-navbar__btn span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 50%;
-  background: #d3531a;
-  opacity: 1;
-
-  transform: rotate(0deg);
-
-  transition: 0.25s ease-in-out;
-}
-
-.header-navbar__btn span:nth-child(even) {
-  left: 50%;
-  border-radius: 0 9px 9px 0;
-}
-
-.header-navbar__btn span:nth-child(odd) {
-  left: 0px;
-  border-radius: 9px 0 0 9px;
-}
-
-.header-navbar__btn span:nth-child(1),
-.header-navbar__btn span:nth-child(2) {
-  top: 0px;
-}
-
-.header-navbar__btn span:nth-child(3),
-.header-navbar__btn span:nth-child(4) {
-  top: 9px;
-}
-
-.header-navbar__btn span:nth-child(5),
-.header-navbar__btn span:nth-child(6) {
-  top: 18px;
-}
-
-.header-navbar__btn.open span:nth-child(1),
-.header-navbar__btn.open span:nth-child(6) {
-  transform: rotate(45deg);
-}
-
-.header-navbar__btn.open span:nth-child(2),
-.header-navbar__btn.open span:nth-child(5) {
-  transform: rotate(-45deg);
-}
-
-.header-navbar__btn.open span:nth-child(1) {
-  left: 2.5px;
-  top: 3.5px;
-}
-
-.header-navbar__btn.open span:nth-child(2) {
-  left: calc(50% - 2.5px);
-  top: 3.5px;
-}
-
-.header-navbar__btn.open span:nth-child(3) {
-  left: -50%;
-  opacity: 0;
-}
-
-.header-navbar__btn.open span:nth-child(4) {
-  left: 100%;
-  opacity: 0;
-}
-
-.header-navbar__btn.open span:nth-child(5) {
-  left: 2.5px;
-  top: 14.5px;
-}
-
-.header-navbar__btn.open span:nth-child(6) {
-  left: calc(50% - 2.5px);
-  top: 14.5px;
 }

@@ -14,28 +14,45 @@ html {
 
   font-family: $font-main;
   font-size: $font-size;
+
+  line-height: 1.15;
 }
 
 body {
+  margin: 0;
   background-color: $color-light;
 }
 
+main {
+  display: block;
+}
+
+hr {
+  overflow: visible;
+  box-sizing: content-box;
+  height: 0;
+}
+
 h1 {
+  margin: 0.67em 0;
+
+  font-size: 2em;
+
   letter-spacing: 0.08em;
 
   font-family: $font-header;
   font-weight: 300;
   line-height: 1.2rem;
 
-  @include lg-min {
-    font-size: 3.75rem;
-  }
-  @include lg-md {
-    font-size: 2.5rem;
-  }
-  @include md {
-    font-size: 1.875rem;
-  }
+  // @include lg-min {
+  //   font-size: 3.75rem;
+  // }
+  // @include lg-md {
+  //   font-size: 2.5rem;
+  // }
+  // @include md {
+  //   font-size: 1.875rem;
+  // }
 }
 
 h2 {
@@ -56,6 +73,7 @@ h3 {
 }
 
 a {
+  background-color: transparent;
   text-decoration: none;
 
   color: $color-light;
@@ -68,4 +86,55 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   color: $color-gray;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+  h2 {
+    margin-bottom: 3rem;
+
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 991.8px) and (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    margin-bottom: 2.625rem;
+
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767.8px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 767.8px) and (min-width: 576px) {
+  h2 {
+    margin-bottom: 2.25rem;
+
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-height: 690px) {
+  .skills__container {
+    grid-auto-rows: calc(230px - 13.3333333333px);
+  }
+}
+@media (max-width: 575.8px) {
+  h2 {
+    margin-bottom: 2.25rem;
+
+    text-align: center;
+
+    font-size: 1.5rem;
+  }
 }

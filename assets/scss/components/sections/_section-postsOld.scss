@@ -1,0 +1,145 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.posts {
+  margin-top: 0;
+}
+.posts__container {
+  max-width: 1340px;
+  margin: auto;
+  padding-right: $gap;
+  padding-left: $gap;
+  gap: $gap * 5;
+}
+
+.posts__grid {
+  display: grid;
+
+  padding-bottom: 20px;
+
+  gap: $gap;
+
+  grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.post-item {
+  transition: background-color 0.5s;
+  background-color: $color-gray-light;
+
+  &:hover {
+    background-color: $color-gray-light;
+    transform: scale(1.1);
+
+    &:hover h3 {
+      color: $color-primary;
+    }
+    &:hover p {
+      color: $color-primary;
+    }
+  }
+
+  .post-item__link {
+    display: grid;
+    overflow: hidden;
+
+    height: 100%;
+
+    grid-template-rows: 300px 1fr;
+  }
+  .post-item__image {
+    display: flex;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+
+    width: 100%;
+
+    background-color: $color-primary;
+    transform: scale(1.1);
+    transition: transform 0.5s;
+
+    object-fit: cover;
+
+    .post-item:nth-of-type(1) {
+      grid-area: p1;
+    }
+    .post-item:nth-of-type(2) {
+      grid-area: p2;
+    }
+    .post-item:nth-of-type(3) {
+      grid-area: p3;
+    }
+    .post-item:nth-of-type(4) {
+      grid-area: p4;
+    }
+    .post-item:nth-of-type(5) {
+      grid-area: p5;
+    }
+    .post-item:nth-of-type(6) {
+      grid-area: p6;
+    }
+  }
+
+  .post-item__caption {
+    color: $color-gray-dark;
+    display: grid;
+    align-content: center;
+
+    padding: 20px;
+  }
+
+  .post-item__caption h3 {
+    transition: color 0.5s;
+    text-align: center;
+
+    font-family: "Roboto Slab", serif;
+  }
+  .post-item__caption p {
+    transition: color 0.5s;
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .posts {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 991.8px) and (min-width: 768px) {
+  .posts {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 767.8px) {
+  .posts {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 767.8px) and (min-width: 576px) {
+  .posts__grid {
+    grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 576px) {
+  .posts__actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.8px) {
+  .posts__actions {
+    width: 100%;
+  }
+  .posts__grid {
+    grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    grid-template-columns: 1fr;
+  }
+}

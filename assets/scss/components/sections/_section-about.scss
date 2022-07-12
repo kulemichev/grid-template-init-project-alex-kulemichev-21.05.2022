@@ -1,82 +1,137 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
+/* 582 */
 .about {
   letter-spacing: 0.055em;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
 
-.about h2 {
-  margin-top: 0;
+  background-color: #e5e5e5;
 }
+.about__container {
+  @extend %container;
+  display: grid;
+}
+.about__content p:first-of-type {
+  position: relative;
 
+  margin-top: -5px;
+}
+.about__content p:first-of-type::after {
+  position: absolute;
+  top: 0;
+
+  width: 2px;
+  height: 200px;
+
+  content: "";
+
+  background-color: rgba(99, 117, 136, 0.1);
+}
+.about__content p:last-of-type {
+  margin: 0;
+}
 .about__image {
   display: grid;
   align-content: center;
+
   justify-items: center;
 }
-
-.about__container {
-  display: grid;
-  grid-template-columns: 1fr 271px;
-  max-width: 1340px;
-  margin: auto;
-  padding-right: $gap;
-  padding-left: $gap;
-  gap: 100px;
+.about__image img {
+  max-width: 100%;
+  max-height: 480px;
 }
 
-.about__content p {
-  font-size: 1.125rem;
-
-  &p:first-of-type {
-    position: relative;
-    margin-top: -5px;
-    &p:last-of-type {
-      margin: 0;
-    }
-    &::after {
-      position: absolute;
-      top: 0;
-      right: -50px;
-    }
+/* 933 */
+@media (min-width: 992px) {
+  .about {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
-
-  @media (max-width: 991.8px) and (min-width: 768) {
-    .about {
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-    .about__container {
-      gap: $gap * 2;
-      grid-template-columns: 1fr 271px;
-    }
-    .about__content p:first-of-type::after {
-      right: -$gap;
-    }
+  h1 {
+    font-size: 3.75rem;
   }
+  h2 {
+    margin-bottom: 3rem;
 
-  @media (max-width: 767.8px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    font-size: 2.5rem;
   }
 
   .about__container {
-    gap: $gap;
+    gap: 100px;
+    grid-template-columns: 1fr 271px;
+  }
+  .about__content p {
+    font-size: 1.125rem;
+  }
+  .about__content p:first-of-type::after {
+    right: -50px;
+  }
+}
+@media (max-width: 991.8px) and (min-width: 768px) {
+  .about {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    margin-bottom: 2.625rem;
+
+    font-size: 2rem;
+  }
+
+  .about__container {
+    gap: 40px;
+    grid-template-columns: 1fr 271px;
+  }
+  .about__content p:first-of-type::after {
+    right: -20px;
+  }
+}
+@media (max-width: 767.8px) {
+  .about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  h1 {
+    font-size: 1.875rem;
+  }
+}
+@media (max-width: 767.8px) and (min-width: 576px) {
+  h2 {
+    margin-bottom: 2.25rem;
+
+    font-size: 1.5rem;
+  }
+
+  .about__container {
+    gap: 20px;
     grid-template-columns: 1fr 236px;
   }
   .about__content p:first-of-type::after {
     right: -10px;
   }
+}
+@media (max-height: 690px) {
+  .skills__container {
+    grid-auto-rows: calc(230px - 13.3333333333px);
+  }
+}
+@media (max-width: 575.8px) {
+  h2 {
+    margin-bottom: 2.25rem;
 
-  @media (max-width: 575.8px) {
-    .about__container {
-      gap: $gap;
-      grid-template-columns: 1fr;
-    }
-    .about__content p:first-of-type::after {
-      display: none;
-    }
+    text-align: center;
+
+    font-size: 1.5rem;
+  }
+
+  .about__container {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  .about__content p:first-of-type::after {
+    display: none;
   }
 }

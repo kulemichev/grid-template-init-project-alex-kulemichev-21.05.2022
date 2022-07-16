@@ -38,10 +38,10 @@ h1 {
   font-weight: 300;
   line-height: 1.2em;
 
-  @include lg {
+  @include lg-min {
     font-size: 3.75rem;
   }
-  @include md-min {
+  @include lg-md {
     font-size: 2.5rem;
   }
   @include md {

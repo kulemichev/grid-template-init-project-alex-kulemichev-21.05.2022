@@ -1,12 +1,16 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-/* 582 */
 .about {
   letter-spacing: 0.055em;
 
   background-color: #e5e5e5;
 }
+
+.about h2 {
+  margin-top: 0;
+}
+
 .about__container {
   @extend %container;
   display: grid;
@@ -43,6 +47,11 @@
 
 /* 933 */
 @media (min-width: 992px) {
+  h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
   .about {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -105,5 +114,14 @@
   }
   .about__content p:first-of-type::after {
     display: none;
+  }
+
+  @media (max-width: 575.8px) {
+    .about__container {
+      grid-template-columns: 1fr;
+    }
+    .about__content p:first-of-type::after {
+      display: none;
+    }
   }
 }

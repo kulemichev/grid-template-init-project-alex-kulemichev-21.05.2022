@@ -16,6 +16,7 @@
   display: grid;
 }
 .about__content p:first-of-type {
+  
   position: relative;
 
   margin-top: -5px;
@@ -23,12 +24,11 @@
 .about__content p:first-of-type::after {
   position: absolute;
   top: 0;
-
   width: 2px;
   height: 200px;
-
+  
   content: "";
-
+  
   background-color: rgba(99, 117, 136, 0.1);
 }
 .about__content p:last-of-type {
@@ -112,16 +112,19 @@
     gap: 20px;
     grid-template-columns: 1fr;
   }
+
   .about__content p:first-of-type::after {
     display: none;
   }
+}
 
   @media (max-width: 575.8px) {
     .about__container {
       grid-template-columns: 1fr;
     }
     .about__content p:first-of-type::after {
-      display: none;
+     
+      display: none;;
     }
   }
-}
+
